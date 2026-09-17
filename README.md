@@ -1,4 +1,3 @@
-<img width="1172" height="703" alt="image" src="https://github.com/user-attachments/assets/c965302d-5f4e-4f18-9922-f012e0e109a0" /># 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
 # IAPR-5- Module 5 - FoC
 ## 9. Implementation of recursion.
 ## 10. Implementation of programs using pointer arithmetic.
