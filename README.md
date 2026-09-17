@@ -1,4 +1,4 @@
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
+<img width="1172" height="703" alt="image" src="https://github.com/user-attachments/assets/c965302d-5f4e-4f18-9922-f012e0e109a0" /># 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
 # IAPR-5- Module 5 - FoC
 ## 9. Implementation of recursion.
 ## 10. Implementation of programs using pointer arithmetic.
@@ -39,7 +39,48 @@
 ### Step 12: 
   Stop
 # Program:
+```c
+#include <stdio.h>
+
+void callByValue(int a, int b)
+{
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("Inside Call by Value: a = %d, b = %d\n", a, b);
+}
+
+void callByReference(int *a, int *b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main()
+{
+    int a, b;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+
+    callByValue(a, b);
+    printf("After Call by Value: a = %d, b = %d\n", a, b);
+
+    callByReference(&a, &b);
+    printf("After Call by Reference: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
+```
 # Output:
+<img width="1206" height="705" alt="image" src="https://github.com/user-attachments/assets/fa38c311-0c47-46c5-9208-64e837e79336" />
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +118,35 @@
 ### Step 10:
   Stop
 # Program:
+```c
+#include <stdio.h>
+
+int fibonacci(int n)
+{
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main()
+{
+    int n, i;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+    for (i = 0; i < n; i++)
+        printf("%d ", fibonacci(i));
+
+    return 0;
+}
+
+```
+
 # Output:
+<img width="1155" height="585" alt="image" src="https://github.com/user-attachments/assets/6e9ee80f-4a38-4de7-817b-30ce9fb9bda5" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +188,57 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```c
+#include <stdio.h>
+
+void printNumbers(int lower, int upper)
+{
+    if (lower > upper)
+        return;
+
+    printf("%d ", lower);
+    printNumbers(lower + 2, upper);
+}
+
+int main()
+{
+    int lower, upper, choice;
+
+    printf("Enter lower limit: ");
+    scanf("%d", &lower);
+
+    printf("Enter upper limit: ");
+    scanf("%d", &upper);
+
+    printf("Enter 1 for Even or 2 for Odd: ");
+    scanf("%d", &choice);
+
+    if (choice == 1)
+    {
+        if (lower % 2 != 0)
+            lower++;
+        printf("Even numbers: ");
+    }
+    else if (choice == 2)
+    {
+        if (lower % 2 == 0)
+            lower++;
+        printf("Odd numbers: ");
+    }
+    else
+    {
+        printf("Invalid choice");
+        return 0;
+    }
+
+    printNumbers(lower, upper);
+
+    return 0;
+}
+```
 # Output:
+<img width="1227" height="700" alt="image" src="https://github.com/user-attachments/assets/595e4f99-4165-4ac1-92ec-e684d227ef4a" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +280,43 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *arr, n, i, sum = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    arr = (int *)calloc(n, sizeof(int));
+
+    if (arr == NULL)
+    {
+        printf("Memory allocation failed");
+        return 1;
+    }
+
+    printf("Enter %d integers: ", n);
+
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    printf("Sum = %d", sum);
+
+    free(arr);
+
+    return 0;
+}
+```
 # Output:
+<img width="1197" height="697" alt="image" src="https://github.com/user-attachments/assets/c3427255-99b9-42d1-b7cc-2447eeca6746" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +352,41 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```c
+#include <stdio.h>
+
+void display(int arr[], int n)
+{
+    int i;
+
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+}
+
+int main()
+{
+    int arr[100], n, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Array elements: ");
+    display(arr, n);
+
+    return 0;
+}
+
+```
 # Output:
+<img width="1172" height="703" alt="image" src="https://github.com/user-attachments/assets/c46936fe-22fe-4fa9-9de1-532edd2f3c09" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
